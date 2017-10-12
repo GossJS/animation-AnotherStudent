@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><title>Страница HTML5</title><meta charset="utf-8">
+<style>
+  @keyframes animation{
+    0% { transform: translateX(-300%) rotate(0deg); }
+    94% { transform: translateX(300%) rotate(calc(360deg*2)); }
+    100% { transform: translateX(-300%) rotate(calc(360deg*2)); animation-timing-function: ease; }
+  }
+  
+  @keyframes animationPos{
+    0% { transform: translateY(0%) scale(1,0.93); animation-timing-function: ease-out; }
+    50% { transform: translateY(-25%) scale(1,1); animation-timing-function: ease-in; }
+    95% { transform: scale(1,1); }
+    100% { transform: translateY(0%) scale(1,0.93); }
+  }
+  
+  #cont{
+    position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 75px );
+    animation: animationPos 800ms infinite;
+  }
+  
+  #circle{
+    background: linear-gradient(to bottom, #6123b2 0%,#6b2ad3 30%,#5658d8 60%,#207cca 100%); 
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-size: 21px;
+    display: table-cell;
+    vertical-align: middle;
+    animation: animation 5s infinite linear;
+    text-shadow: 0 0 4px rgba(0,0,0,1);
+    box-shadow: 0 0px 2px blue;
+  }
+  
+  #circle:hover{
+    transform: rotate(45deg);
+    animation-play-state: paused;
+  }
+
+  
+html, body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff 0%,#fef9ff 56%,#e3e6fc 67%,#e4defc 81%,#d2cdf2 92%);
+}
+</style>
+
+ </head>
+ <body>
+   <h4 id="author" title="GossJS">PeterS</h4>
+   <div id="cont"><div id="circle">Аниматрица</div></div>
+
+ </body>
+</html>
